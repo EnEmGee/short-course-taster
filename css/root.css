@@ -1,0 +1,1845 @@
+@charset "UTF-8";
+/* 
+file name:  src/styles/typograpghy.scss
+
+HELLO
+
+created: 	230622
+notes: 		This stylesheet is for rules relating to basic typography tags. (ie, <p>, <h1>, <h2>)
+version: 	1.0 deployed in prod | S Malcolm
+			1.1 changes to suit base acu brand and user feedback | camilanovic
+			1.2 changes to font selection and heading/blockquote styles | mahood
+			
+*/
+/*
+
+	created:  	221001
+	notes:    	housing variables that will be reused across many stylesheets
+	version:  	1.0 init setup | s malcolm
+				1.1 adjustments for canvas core x | camilanovic
+				1.2 changes to default font | mahood
+*/
+/*
+$fonts: (
+	'body': $web-font,
+	'feature': $web-font,
+	'link': $web-font
+);*/
+h1 {
+  font-weight: 500;
+  font-size: 2rem; }
+
+h1,
+.pages.show .page-title {
+  color: #252320; }
+  h1.page-title,
+  .pages.show .page-title.page-title {
+    font-size: 2rem;
+    font-weight: bold;
+    border-left: 4px solid #e0061f;
+    margin: 1.5rem 0 1.5rem 0;
+    padding-left: .75rem; }
+
+h2,
+#announcements_on_home_page h2,
+#announcements_on_home_page h1,
+#dashboard h1,
+#dashboard_header_container .hidden-phone {
+  color: #252320;
+  font-weight: 600;
+  font-size: 1.6rem; }
+
+#announcements_on_home_page h2,
+#announcements_on_home_page h1 {
+  font-size: 1.1rem; }
+
+#course_home_content h2.ic-Action-header__Heading,
+#course_home_content h1.ic-Action-header__Heading {
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 1.5rem; }
+
+h3 {
+  color: #252320;
+  font-weight: 600;
+  font-size: 1.4rem; }
+
+h4 {
+  color: #252320;
+  font-weight: 600;
+  font-size: 1.2rem;
+  margin-top: 1.75rem; }
+
+h5 {
+  font-size: 1.1rem;
+  color: #747474;
+  font-weight: 600; }
+
+h6 {
+  color: #747474;
+  font-size: 1rem; }
+
+h2 + h3,
+h3 + h4,
+h4 + h5,
+h5 + h6 {
+  margin-top: 0; }
+
+hr {
+  margin-bottom: 2rem; }
+
+blockquote {
+  border-left: 3px solid #D8CFDD;
+  padding: 0.1rem 1rem;
+  margin: 1.5rem 0;
+  color: #3c1054;
+  width: 80%;
+  padding: 1rem;
+  font-weight: 600; }
+
+blockquote p {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.5;
+  font-weight: inherit; }
+
+#content-wrapper a[href]:not(.btn):not(.Button):not(.ic-DashboardCard__link):not(.ic-DashboardCard__action-layout):not(.ui-corner-all):not(.acuo-btn):not(.turnitin_similarity_score) {
+  color: #007ddf;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  text-decoration: none; }
+  #content-wrapper a[href]:not(.btn):not(.Button):not(.ic-DashboardCard__link):not(.ic-DashboardCard__action-layout):not(.ui-corner-all):not(.acuo-btn):not(.turnitin_similarity_score):hover {
+    color: #F2120C;
+    text-decoration: underline; }
+
+#right-side .button-sidebar-wide {
+  font-size: .9rem;
+  padding-right: 10px; }
+
+#module_navigation_target a,
+.module-sequence-footer-button--previous a,
+.module-sequence-footer-button--next a {
+  background: #3C1053;
+  color: white;
+  border-radius: 5px;
+  border: 1px solid #3C1053; }
+  #module_navigation_target a:hover,
+  .module-sequence-footer-button--previous a:hover,
+  .module-sequence-footer-button--next a:hover {
+    background: white;
+    color: #3C1053;
+    border-color: #3C1053; }
+
+h4 .atto_image_button_middle {
+  margin: .75rem .75rem .75rem 0;
+  border-radius: 10px;
+  max-width: 35px;
+  padding: .5rem 0rem .5rem 0; }
+
+#custom_my_acu_tray div,
+#custom_my_acu_tray p,
+#custom_my_acu_tray a,
+#custom_my_acu_tray span,
+#help_tray div,
+#help_tray p,
+#help_tray a,
+#help_tray span {
+  /* font-family: map-get($fonts, 'body') */ }
+
+#custom_my_acu_tray a,
+#help_tray a {
+  font-weight: 500; }
+
+#submission_details #submission_files_list .submission-file .turnitin_similarity_score {
+  color: white; }
+
+#wiki_page_show img,
+#wiki_page_body img {
+  margin: .5rem 1rem .5rem 0; }
+
+q {
+  font-style: italics;
+  padding: .25rem 0; }
+
+/*
+file name:  src/styles/canvas.ui.scss
+
+created:  2022
+notes:    used to override the core styles of canvas – should be modified when major updates are rolled into canvas as a product
+version:  1.0 deployed in prod | S Malcolm
+      1.1 split between elements and typography ui items, modified to be branded acu | camilanovic
+      1.2 changes to the module sequence navigation for discussion | Thea & Mark
+      1.3 align buttons in Course Settings page | Thea
+      1.4 hide self-registration link on login page | Thea
+      
+*/
+/*
+
+	created:  	221001
+	notes:    	housing variables that will be reused across many stylesheets
+	version:  	1.0 init setup | s malcolm
+				1.1 adjustments for canvas core x | camilanovic
+				1.2 changes to default font | mahood
+*/
+/*
+$fonts: (
+	'body': $web-font,
+	'feature': $web-font,
+	'link': $web-font
+);*/
+body.pages #content-wrapper,
+body.assignments #content-wrapper,
+body.discussions #content-wrapper,
+body.quizzes #content-wrapper,
+body.modules #content-wrapper,
+body.syllabus #content-wrapper,
+body.files #content-wrapper,
+body.collaborations #content-wrapper,
+body.announcements #content-wrapper,
+body.conferences #content-wrapper,
+body.outcomes #content-wrapper,
+body.people #content-wrapper {
+  max-width: 1200px; }
+
+.ic-Login-header__links {
+  visibility: hidden; }
+
+div #module_sequence_footer {
+  right: auto !important;
+  left: auto;
+  padding-left: 24px; }
+
+.tox-swatches__row:nth-of-type(1),
+.tox-swatches__row:nth-of-type(2),
+.tox-swatches__row:nth-of-type(3) {
+  display: none !important; }
+
+.list-view a {
+  color: #3C1053; }
+  .list-view a.active {
+    border-left: 2px solid #f2110b;
+    padding-left: 6px;
+    margin-left: -2px; }
+
+.ic-app-header__menu-list-link:hover,
+.ic-app-header__menu-list-link:focus,
+.ic-app-header__menu-list-item a:hover .menu-item__text,
+.ic-app-header__menu-list-item a:focus .menu-item__text {
+  text-decoration: underline; }
+
+.ic-notification {
+  margin-top: 1.5rem; }
+
+.notification_account_content_text {
+  margin-bottom: 0.5rem;
+  display: inline-flex; }
+
+.ic-DashboardCard__box__header {
+  font-weight: 500;
+  font-size: 1.5rem; }
+
+.ic-DashboardCard__header-title {
+  font-size: 1rem; }
+
+.ic-DashboardCard__header-subtitle {
+  font-size: 0.85rem; }
+
+.ic-DashboardCard__box {
+  padding: 1rem !important; }
+
+#dashboard_header_container {
+  margin-left: 1rem; }
+
+.ic-DashboardCard__link:hover span {
+  text-decoration: underline; }
+
+#breadcrumbs li a,
+#breadcrumbs li span {
+  font-size: 0.95rem;
+  color: #3C1053;
+  font-weight: 500; }
+
+#breadcrumbs li:last-of-type span {
+  font-weight: 600; }
+
+#breadcrumbs li a:hover {
+  text-decoration: underline; }
+
+#breadcrumbs li span {
+  font-style: italics; }
+
+#section-tabs li {
+  font-size: 0.95rem;
+  font-weight: 500; }
+
+.CourseAvailabilityOptions fieldset,
+.QuantitativeDataOptions fieldset {
+  display: flex; }
+
+.button-sidebar-wide,
+#right-side .button-sidebar-wide,
+#easy_student_view,
+#print-grades-button,
+#show_all_details_button,
+.header-bar .btn:not(.btn-primary):not(.btn-published),
+#pairing-code button,
+#pairing-code button span,
+#pairing-code button span span,
+.btn-add-folder,
+.course_enrollment_link,
+.add_rubric_link,
+.edit_assignment_link {
+  background: white;
+  color: #252320;
+  border-radius: 5px; }
+  .button-sidebar-wide:hover,
+  #right-side .button-sidebar-wide:hover,
+  #easy_student_view:hover,
+  #print-grades-button:hover,
+  #show_all_details_button:hover,
+  .header-bar .btn:not(.btn-primary):not(.btn-published):hover,
+  #pairing-code button:hover,
+  #pairing-code button span:hover,
+  #pairing-code button span span:hover,
+  .btn-add-folder:hover,
+  .course_enrollment_link:hover,
+  .add_rubric_link:hover,
+  .edit_assignment_link:hover {
+    text-decoration: underline;
+    background: #E8E3DB;
+    color: #3C1053; }
+
+.btn-primary:hover,
+.Button--primary:hover {
+  background: #e8e8e8;
+  color: #2d3b45;
+  text-decoration: underline; }
+
+button.btn {
+  border-radius: 5px; }
+
+#pairing-code button span {
+  font-size: 0.95rem; }
+
+.btn-secondary:hover,
+.Button--secondary:hover {
+  box-shadow: 0px 0px 0px 2px #3c1053;
+  background: #e3e3e3;
+  text-decoration: underline !important; }
+
+.al-options {
+  padding: 0; }
+
+a[class*="icon-"]:before,
+a[class^="icon-"]:before,
+#right-side .button-sidebar-wide i {
+  margin-right: 6px;
+  margin-left: -2px; }
+
+.ui-menu-item a {
+  color: #007ddf; }
+
+.ui-menu .ui-menu-item a.ui-state-hover,
+.ui-menu .ui-menu-item a.ui-state-active,
+.ui-menu .ui-menu-item .ui-progressbar a.ui-widget-header,
+.ui-progressbar .ui-menu .ui-menu-item a.ui-widget-header,
+.ui-menu .ui-menu-item a.ui-state-focus {
+  background: none;
+  color: inherit;
+  text-decoration: underline;
+  cursor: pointer; }
+
+#student-grades-final {
+  font-size: 1rem !important;
+  font-weight: 600;
+  margin-bottom: 1rem; }
+
+#wiki_page_show .show-content {
+  padding-bottom: 1rem; }
+
+.pill > li:last-child {
+  padding-top: 2px; }
+
+h3.pad-box-mini.border.border-b {
+  height: 100%;
+  background-color: #E8E3DB !important;
+  margin-top: 0;
+  box-sizing: border-box;
+  padding: 10px 15px; }
+
+#catalog_content
+a[href]:not(.btn):not(.Button):not(.ic-DashboardCard__link):not(
+.ic-DashboardCard__action-layout
+):not(.ui-corner-all) {
+  color: #3C1053;
+  font-weight: 500;
+  font-size: 0.95rem; }
+
+.course_enrollment_link {
+  bottom: 15px;
+  left: 15px;
+  right: revert; }
+
+.notification_account_content_text b {
+  margin-left: 3px; }
+
+body[class*="context-group"] #section-tabs li a[href*="collaborations"] {
+  display: none; }
+
+#gradebook_header .assignmentDetails__Title {
+  color: white; }
+
+#gradebook_header #context_title {
+  color: white; }
+
+form#submit_online_upload_form label.checkbox div,
+form#submit_online_text_entry_form label.checkbox div,
+input[data-testid="similarity-pledge-checkbox"] + label span {
+  white-space: pre-line;
+  line-height: 1.2; }
+
+.navigation-tray-container.help-tray div#help_tray ul li a {
+  color: #643075;
+  font-weight: bold; }
+
+.item-group-condensed {
+  padding: 0; }
+
+.item-group-condensed .ig-header {
+  padding: .5rem .5rem; }
+
+.ic-Action-header {
+  display: inline; }
+
+.ig-header .module_header_items {
+  margin-top: .25rem !important;
+  position: absolute;
+  float: right;
+  right: 0;
+  top: 0; }
+
+.prerequisites {
+  max-width: 100% !important;
+  width: 100% !important;
+  padding: .5rem 2.25rem 0 !important; }
+
+.prerequisites_message {
+  padding-bottom: .75rem; }
+
+/*
+file name:  src/styles/tables.scss
+
+created:    2022
+notes:      default table styling
+version:    1.0 deployed in prod | S Malcolm
+*/
+/*
+
+	created:  	221001
+	notes:    	housing variables that will be reused across many stylesheets
+	version:  	1.0 init setup | s malcolm
+				1.1 adjustments for canvas core x | camilanovic
+				1.2 changes to default font | mahood
+*/
+/*
+$fonts: (
+	'body': $web-font,
+	'feature': $web-font,
+	'link': $web-font
+);*/
+#course_home_content table:not(.acuo-table),
+#course_home_content table:not([cellpadding]):not(.acuo-table),
+.show-content table:not(.acuo-table),
+.show-content table:not([cellpadding]):not(.acuo-table),
+.user_content table:not(.acuo-table),
+.user_content table:not([cellpadding]):not(.acuo-table) {
+  border-color: #eeeeee;
+  border-collapse: collapse; }
+  #course_home_content table:not(.acuo-table) td, #course_home_content table:not(.acuo-table) th,
+  #course_home_content table:not([cellpadding]):not(.acuo-table) td,
+  #course_home_content table:not([cellpadding]):not(.acuo-table) th,
+  .show-content table:not(.acuo-table) td,
+  .show-content table:not(.acuo-table) th,
+  .show-content table:not([cellpadding]):not(.acuo-table) td,
+  .show-content table:not([cellpadding]):not(.acuo-table) th,
+  .user_content table:not(.acuo-table) td,
+  .user_content table:not(.acuo-table) th,
+  .user_content table:not([cellpadding]):not(.acuo-table) td,
+  .user_content table:not([cellpadding]):not(.acuo-table) th {
+    padding: .5rem; }
+    #course_home_content table:not(.acuo-table) td p, #course_home_content table:not(.acuo-table) th p,
+    #course_home_content table:not([cellpadding]):not(.acuo-table) td p,
+    #course_home_content table:not([cellpadding]):not(.acuo-table) th p,
+    .show-content table:not(.acuo-table) td p,
+    .show-content table:not(.acuo-table) th p,
+    .show-content table:not([cellpadding]):not(.acuo-table) td p,
+    .show-content table:not([cellpadding]):not(.acuo-table) th p,
+    .user_content table:not(.acuo-table) td p,
+    .user_content table:not(.acuo-table) th p,
+    .user_content table:not([cellpadding]):not(.acuo-table) td p,
+    .user_content table:not([cellpadding]):not(.acuo-table) th p {
+      margin: 0; }
+  #course_home_content table:not(.acuo-table) thead tr,
+  #course_home_content table:not(.acuo-table) thead th,
+  #course_home_content table:not([cellpadding]):not(.acuo-table) thead tr,
+  #course_home_content table:not([cellpadding]):not(.acuo-table) thead th,
+  .show-content table:not(.acuo-table) thead tr,
+  .show-content table:not(.acuo-table) thead th,
+  .show-content table:not([cellpadding]):not(.acuo-table) thead tr,
+  .show-content table:not([cellpadding]):not(.acuo-table) thead th,
+  .user_content table:not(.acuo-table) thead tr,
+  .user_content table:not(.acuo-table) thead th,
+  .user_content table:not([cellpadding]):not(.acuo-table) thead tr,
+  .user_content table:not([cellpadding]):not(.acuo-table) thead th {
+    background-color: #3C1053; }
+    #course_home_content table:not(.acuo-table) thead tr td,
+    #course_home_content table:not(.acuo-table) thead th td,
+    #course_home_content table:not([cellpadding]):not(.acuo-table) thead tr td,
+    #course_home_content table:not([cellpadding]):not(.acuo-table) thead th td,
+    .show-content table:not(.acuo-table) thead tr td,
+    .show-content table:not(.acuo-table) thead th td,
+    .show-content table:not([cellpadding]):not(.acuo-table) thead tr td,
+    .show-content table:not([cellpadding]):not(.acuo-table) thead th td,
+    .user_content table:not(.acuo-table) thead tr td,
+    .user_content table:not(.acuo-table) thead th td,
+    .user_content table:not([cellpadding]):not(.acuo-table) thead tr td,
+    .user_content table:not([cellpadding]):not(.acuo-table) thead th td {
+      color: white;
+      font-weight: bold; }
+    #course_home_content table:not(.acuo-table) thead tr th,
+    #course_home_content table:not(.acuo-table) thead th th,
+    #course_home_content table:not([cellpadding]):not(.acuo-table) thead tr th,
+    #course_home_content table:not([cellpadding]):not(.acuo-table) thead th th,
+    .show-content table:not(.acuo-table) thead tr th,
+    .show-content table:not(.acuo-table) thead th th,
+    .show-content table:not([cellpadding]):not(.acuo-table) thead tr th,
+    .show-content table:not([cellpadding]):not(.acuo-table) thead th th,
+    .user_content table:not(.acuo-table) thead tr th,
+    .user_content table:not(.acuo-table) thead th th,
+    .user_content table:not([cellpadding]):not(.acuo-table) thead tr th,
+    .user_content table:not([cellpadding]):not(.acuo-table) thead th th {
+      color: white;
+      font-weight: bold; }
+  #course_home_content table:not(.acuo-table) th,
+  #course_home_content table:not([cellpadding]):not(.acuo-table) th,
+  .show-content table:not(.acuo-table) th,
+  .show-content table:not([cellpadding]):not(.acuo-table) th,
+  .user_content table:not(.acuo-table) th,
+  .user_content table:not([cellpadding]):not(.acuo-table) th {
+    background-color: #3C1053;
+    color: white;
+    font-weight: bold; }
+  #course_home_content table:not(.acuo-table) tbody tr:nth-child(even),
+  #course_home_content table:not([cellpadding]):not(.acuo-table) tbody tr:nth-child(even),
+  .show-content table:not(.acuo-table) tbody tr:nth-child(even),
+  .show-content table:not([cellpadding]):not(.acuo-table) tbody tr:nth-child(even),
+  .user_content table:not(.acuo-table) tbody tr:nth-child(even),
+  .user_content table:not([cellpadding]):not(.acuo-table) tbody tr:nth-child(even) {
+    background-color: #f3f0EC; }
+  #course_home_content table:not(.acuo-table) tbody tr:nth-child(odd),
+  #course_home_content table:not([cellpadding]):not(.acuo-table) tbody tr:nth-child(odd),
+  .show-content table:not(.acuo-table) tbody tr:nth-child(odd),
+  .show-content table:not([cellpadding]):not(.acuo-table) tbody tr:nth-child(odd),
+  .user_content table:not(.acuo-table) tbody tr:nth-child(odd),
+  .user_content table:not([cellpadding]):not(.acuo-table) tbody tr:nth-child(odd) {
+    background-color: #FCFBFA; }
+  #course_home_content table:not(.acuo-table) tfoot tr,
+  #course_home_content table:not([cellpadding]):not(.acuo-table) tfoot tr,
+  .show-content table:not(.acuo-table) tfoot tr,
+  .show-content table:not([cellpadding]):not(.acuo-table) tfoot tr,
+  .user_content table:not(.acuo-table) tfoot tr,
+  .user_content table:not([cellpadding]):not(.acuo-table) tfoot tr {
+    background-color: #E8E3DB; }
+    #course_home_content table:not(.acuo-table) tfoot tr td,
+    #course_home_content table:not([cellpadding]):not(.acuo-table) tfoot tr td,
+    .show-content table:not(.acuo-table) tfoot tr td,
+    .show-content table:not([cellpadding]):not(.acuo-table) tfoot tr td,
+    .user_content table:not(.acuo-table) tfoot tr td,
+    .user_content table:not([cellpadding]):not(.acuo-table) tfoot tr td {
+      color: #252320;
+      font-weight: bold; }
+
+/* Syllabus table adjustments */
+#syllabus tr.date.date_passed td, #syllabus tr.date.date_passed th, #syllabus tr.date td, #syllabus tr.date th.day_date {
+  background: none !important;
+  color: inherit !important; }
+
+.ic-Table.ic-Table--hover-row tbody tr:hover, .ic-Table.ic-Table--hover-row tbody tr.ic-Table__row--bg-neutral:hover, .ic-Table.ic-Table--hover-row tbody tr.ic-Table__row--bg-success:hover, .ic-Table.ic-Table--hover-row tbody tr.ic-Table__row--bg-alert:hover, .ic-Table.ic-Table--hover-row tbody tr.ic-Table__row--bg-danger:hover {
+  background: #eeeeee; }
+
+#course_syllabus table {
+  margin-bottom: 1rem; }
+
+#course_home_content table.acu-plain-table tbody tr:nth-child(even),
+.show-content table.acu-plain-table tbody tr:nth-child(even),
+.user_content table.acu-plain-table tbody tr:nth-child(even) {
+  background-color: transparent; }
+
+#course_home_content table.acu-plain-table tbody tr:nth-child(odd),
+.show-content table.acu-plain-table tbody tr:nth-child(odd),
+.user_content table.acu-plain-table tbody tr:nth-child(odd) {
+  background-color: transparent; }
+
+/* matt updated 19-08-24 to fix people page hidden table and hidden admin menu */
+/* override visibility of group catagories table to show admin menu */
+#group_categories_tabs {
+  overflow: visible !important; }
+
+/*turn on wrap to fit within table frame */
+#group_categories_tabs table.roster {
+  white-space: normal; }
+
+/*
+file name:  src/styles/printbtn-globalnavtray.scss
+
+created:    2022
+notes:      ACUO purple primary button on hover and span with symbol
+version:    1.0 deployed in prod | S Malcolm
+*/
+/*
+
+	created:  	221001
+	notes:    	housing variables that will be reused across many stylesheets
+	version:  	1.0 init setup | s malcolm
+				1.1 adjustments for canvas core x | camilanovic
+				1.2 changes to default font | mahood
+*/
+/*
+$fonts: (
+	'body': $web-font,
+	'feature': $web-font,
+	'link': $web-font
+);*/
+.acu-printbtn {
+  background-color: #eeeeee;
+  color: #3C1053;
+  border: 1px solid #E8E3DB;
+  border-radius: 3px;
+  transition: all .2s ease-in-out;
+  display: inline-block;
+  position: relative;
+  padding: 6px 10px;
+  margin-bottom: 0;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  text-decoration: none;
+  overflow: hidden;
+  font-weight: 500; }
+
+.acu-printbtn:hover,
+.acu-printbtn:focus {
+  background-color: #3C1053;
+  border-color: #3C1053;
+  color: #fff; }
+
+/* ACUO purple primary button - UNSURE IF THESE ARE USED ANYWHERE? NEED TO DO PROPER TESTING BEFORE DELETING - thbui 13/06/2025 */
+.acuo-btn {
+  background-color: white;
+  color: #3C1053;
+  border: 2px solid #3C1053;
+  border-radius: 3px;
+  transition: all .2s ease-in-out;
+  display: inline-block;
+  position: relative;
+  padding: 6px 20px;
+  margin-bottom: 0;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  text-decoration: none;
+  overflow: hidden;
+  font-weight: 500; }
+
+.acuo-btn:hover,
+.acuo-btn:focus {
+  background-color: #643075;
+  border-color: #643075;
+  color: #fff; }
+
+.global-nav-custom-tray {
+  width: 448px !important;
+  top: 0px;
+  bottom: 0px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 6px 7px 0px, rgba(0, 0, 0, 0.25) 0px 10px 28px 0px;
+  background-color: white;
+  position: fixed;
+  overflow-y: auto;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  z-index: 9999;
+  max-width: 100vw;
+  max-height: 100vh; }
+
+.gnct-easing {
+  left: -200px;
+  opacity: .8; }
+
+.Global-navigation-tray {
+  max-width: 480px; }
+
+.gcnt-tray-close-wrapper {
+  right: 8px;
+  position: absolute;
+  left: auto;
+  top: 8px;
+  z-index: 1;
+  display: inline-block; }
+
+.gcnt-tray-close-btn {
+  font-size: 1rem;
+  height: 28px;
+  all: initial;
+  animation: initial;
+  background: initial;
+  border-collapse: separate;
+  border-color: initial;
+  border-image: initial;
+  border-spacing: initial;
+  bottom: auto;
+  box-shadow: none;
+  box-sizing: border-box;
+  caption-side: top;
+  clear: none;
+  clip: auto;
+  color: black;
+  column-count: auto;
+  column-fill: balance;
+  column-gap: normal;
+  column-rule: initial;
+  column-width: auto;
+  content: normal;
+  counter-increment: none;
+  counter-reset: none;
+  cursor: pointer;
+  direction: inherit;
+  display: inline-block;
+  empty-cells: show;
+  float: none;
+  font-size: medium;
+  font-stretch: normal;
+  font-style: normal;
+  font-variant: initial;
+  font-weight: 400;
+  height: auto;
+  hyphens: none;
+  left: auto;
+  letter-spacing: normal;
+  line-height: normal;
+  list-style: initial;
+  margin: 0px;
+  max-height: none;
+  max-width: 100%;
+  min-height: 0px;
+  min-width: 0px;
+  opacity: 1;
+  orphans: 2;
+  overflow: visible;
+  padding: initial;
+  page-break-after: initial;
+  page-break-before: initial;
+  page-break-inside: initial;
+  perspective-origin: 50% 50%;
+  perspective: none;
+  position: relative;
+  right: auto;
+  tab-size: 8;
+  table-layout: auto;
+  text-align-last: auto;
+  text-align: center;
+  text-decoration: none;
+  text-indent: 0px;
+  text-shadow: none;
+  text-transform: none;
+  top: auto;
+  touch-action: manipulation;
+  transform-origin: 50% 50% 0px;
+  transform-style: flat;
+  transform: none;
+  transition: background 0.2s ease 0s, transform 0.2s ease 0s;
+  unicode-bidi: normal;
+  user-select: none;
+  vertical-align: middle;
+  visibility: visible;
+  white-space: normal;
+  widows: 2;
+  width: auto;
+  word-spacing: normal;
+  z-index: auto;
+  backface-visibility: visible; }
+
+.gcnt-tray-close-btn[type="button"] {
+  -webkit-appearance: none; }
+
+.gcnt-tray-close-btn:focus,
+.gcnt-tray-close-btn:hover,
+.gcnt-tray-close-btn:active {
+  color: #008ee2;
+  outline: #008ee2; }
+
+.gcnt-tray-close-btn:focus,
+.gcnt-tray-close-btn:hover,
+.gcnt-tray-close-btn:active {
+  text-decoration: none; }
+
+.gcnt-tray-close-btn .gcnt-tray-close-svg-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  display: block; }
+
+.gcnt-tray-close-txt {
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  clip: rect(0px, 0px, 0px, 0px);
+  margin: -1px;
+  padding: 0px;
+  overflow: hidden;
+  border-width: 0px;
+  border-style: initial;
+  border-color: initial;
+  border-image: initial; }
+
+.tray-with-space-for-global-nav {
+  margin-left: 54px; }
+
+.acu_tray_flex_class {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow-y: scroll; }
+
+.gnct-content-wrap {
+  box-sizing: border-box;
+  padding: 1.5rem; }
+
+.gcnt-tray-h1 {
+  color: inherit;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 24.75px;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  margin: 0px; }
+
+.gcnt-list {
+  list-style-type: none;
+  -webkit-padding-start: 0px;
+  padding-left: 0px;
+  margin: 0.75rem 0;
+  font-weight: 16px;
+  font-family: 400;
+  padding: 0px; }
+
+.gcnt-list-item {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 22.4px;
+  padding: 0px; }
+
+.gcnt-list-link-wrapper a.gcnt-list-link:link,
+.gcnt-list-link-wrapper a.gcnt-list-link:visited,
+.gcnt-list-link-wrapper button.gcnt-list-link {
+  cursor: pointer;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 400;
+  transition: outline-color 0.2s ease 0s;
+  vertical-align: baseline; }
+
+.gcnt-link-desc {
+  letter-spacing: normal;
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 10px; }
+
+i.gnct_inst_menu_icon:before {
+  font-size: 26px;
+  width: 26px;
+  line-height: 26px; }
+
+i.gnct_inst_menu_icon {
+  width: 26px;
+  height: 26px;
+  /*gcnt-tray-h1*/ }
+
+.acu_ack {
+  padding: 1.5em; }
+
+/*
+file name:  src/styles/responsiveIframes.scss
+
+created:    2022
+notes:      to ensure videos play at 75% of screen width by default
+version:    1.0 deployed in prod | S Malcolm
+			1.1 separated echo styles and added media queries - August 2024 | mahood
+			1.2 updated aspect ratio of echo360 iframe to 1.53 - March 2025 | TheaBui
+      1.3 updated aspect ratio of echo360 iframe to 1.76 - Oct 2026 | TheaBui
+*/
+iframe[src*="youtube"],
+iframe[src*="vimeo"] {
+  width: 75%;
+  aspect-ratio: 16 / 9;
+  height: 100%; }
+
+iframe[src*="echo360"] {
+  width: 75%;
+  aspect-ratio: 1.76;
+  height: 100%; }
+
+iframe.lti-embed[src*="youtube"],
+iframe.lti-embed[src*="vimeo"] {
+  width: 75% !important;
+  height: 100% !important; }
+
+iframe.lti-embed[src*="echo360"] {
+  width: 75% !important;
+  height: 100% !important; }
+
+/* added responsive frames for smaller size devices */
+@media screen and (max-width: 768px) {
+  iframe[src*="youtube"],
+  iframe[src*="vimeo"] {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    height: 100%; }
+  iframe[src*="echo360"] {
+    width: 100%;
+    aspect-ratio: 1.76;
+    height: 100%; }
+  iframe.lti-embed[src*="youtube"],
+  iframe.lti-embed[src*="vimeo"] {
+    width: 100% !important;
+    height: 100% !important; }
+  iframe.lti-embed[src*="echo360"] {
+    width: 100% !important;
+    height: 100% !important; } }
+
+@media screen and (max-width: 480px) {
+  iframe[src*="echo360"] {
+    width: 100%;
+    aspect-ratio: 1.76;
+    height: 100%; } }
+
+/*
+file name:  src/styles/teachingTeam.scss
+
+created:    2023
+notes:      styling for the teaching team section of the template
+version:    1.0 deployed in prod | camilanovic
+*/
+.temporaryStylingDiv img {
+  border-radius: 6px;
+  max-width: 300px; }
+
+/*
+file name:  src/styles/impactOverrides.scss
+
+created:  	230306
+notes:    	overriding styles for any impact pop up, modal, or indicator that can't be changed in eesysoft
+version:  	1.0 init setup | camilanovic
+*/
+#supportCenterMainHeading,
+.eesy__modal-scope .header__close:before,
+.eesy__modal-scope .eesy__header .header__back:before {
+  color: white !important; }
+
+.eesy__modal-scope .isFocusable.focusStyleUnderline:focus {
+  text-decoration: none; }
+
+.eesy__modal-scope .xbutton__close {
+  margin-top: 5px; }
+
+.eesy_container_v4 *:not(.eesy_standard_button):not(.eesy_hint_close):not(.eesy_systray_button):not(.eesy_systray_close) {
+  font-family: Arial !important;
+  line-height: 1.5; }
+
+.eesy_container_v4 h3 {
+  font-size: 1.1rem;
+  margin: 1rem 0 .5rem 0;
+  line-height: 1.2; }
+
+.eesy_container_v4.eesy_light a:hover,
+.eesy_container_v4.eesy_light a:focus {
+  color: #F2120C !important; }
+
+.eesy_container_v4[aria-label*="Terms-NOTUSING"] .eesy_hide_text {
+  display: none; }
+
+.eesy_container_v4[aria-label*="Terms-NOTUSING"] .eesy_dontshowanymore:after {
+  content: 'By checking this box, I agree to the terms and conditions outlined above.';
+  display: inline-block;
+  padding-left: .5rem; }
+
+.eesy_container_v4#eesy-standardcontainer .eesy_header .eesy_header_text {
+  font-style: italic;
+  color: #747474;
+  font-weight: 500;
+  font-size: 1.5rem;
+  padding: 1rem 0 0rem 2rem;
+  box-sizing: border-box; }
+
+.eesy_container_v4#eesy-standardcontainer #eesy_content h2,
+.eesy_container_v4#eesy-standardcontainer #eesy_systray h2 {
+  color: #252320;
+  font-weight: 600;
+  font-size: 1.5rem;
+  margin-top: 1rem; }
+
+.eesy_container_v4#eesy-standardcontainer #eesy_content h3,
+.eesy_container_v4#eesy-standardcontainer #eesy_systray h3 {
+  font-size: 1.2rem;
+  line-height: 1.2; }
+
+.eesy_container_v4#eesy-standardcontainer #eesy_content .eesy-proactive-content-box,
+.eesy_container_v4#eesy-standardcontainer #eesy_systray .eesy-proactive-content-box {
+  padding: 0rem 1.5rem 2rem 1.5rem; }
+
+.eesy-highlighted:not(:focus),
+.eesy-highlighted:not(:focus)[data-eesy-assigned-helpitem-id] {
+  box-shadow: 0px 0px 0 4px #ff9300 !important; }
+
+.eesy__modal-scope.eesy__themes > .eesy__modal .filter__category {
+  color: #252320; }
+
+.eesy__modal-scope.eesy__themes > .eesy__modal .filter__category:focus,
+.eesy__modal-scope.eesy__themes > .eesy__modal .filter__category:hover {
+  text-decoration: underline; }
+
+.eesy__modal-scope.eesy__themes > .eesy__modal .results__result:hover {
+  background: #E8E3DB !important; }
+
+.eesy-step-transitions > button:last-of-type {
+  background: #3C1053 !important; }
+
+#eesy_systray_header_text {
+  font-size: 1.4rem; }
+
+/*
+file name:  src/styles/acuonline-fixes.scss
+created: 	2023
+notes: 		used to temporarily host some ACUO specific items at the root account
+version: 	1.0 deployed into prod | camilanovic
+*/
+details {
+  padding: .5rem 0; }
+  details summary {
+    background: #E8E3Db;
+    width: fit-content;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer; }
+    details summary:hover {
+      text-decoration: underline; }
+
+details[open] summary {
+  border-radius: 5px 5px 0 0;
+  font-style: italic; }
+
+details[open] div {
+  border: 2px solid #E8E3DB;
+  border-radius: 0 0 5px 5px;
+  padding: 0.5rem 1rem; }
+
+.acu_frame {
+  overflow: hidden;
+  position: relative;
+  /* Center the items so smaller ones are centered, full width ones ok */
+  display: flex;
+  justify-content: center; }
+
+.acu_frame.ratio_1-1 {
+  padding-top: 100%;
+  /* 1:1 aspect ratio */ }
+
+.acu_frame.ratio_2-1 {
+  padding-top: 50%;
+  /* 2:1 aspect ratio */ }
+
+.acu_frame.ratio_1-2 {
+  padding-top: 200%;
+  /* 1:2 aspect ratio */ }
+
+.acu_frame.ratio_3-2 {
+  padding-top: 66.66%;
+  /* 3:2 aspect ratio */ }
+
+.acu_frame.ratio_2-3 {
+  padding-top: 150%;
+  /* 2:3 aspect ratio */ }
+
+.acu_frame.ratio_4-3 {
+  padding-top: 75%;
+  /* 4:3 aspect ratio */ }
+
+.acu_frame.ratio_3-4 {
+  padding-top: 133.33%;
+  /* 3:4 aspect ratio */ }
+
+.acu_frame.ratio_16-9 {
+  padding-top: 56.25%;
+  /* 16:9 aspect ratio */ }
+
+.acu_frame.ratio_9-16 {
+  padding-top: 177.77%;
+  /* 9:16 aspect ratio */ }
+
+.acu_frame.ratio_21-9 {
+  padding-top: 42.85%;
+  /* 21:9 aspect ratio */ }
+
+.acu_frame.ratio_9-21 {
+  padding-top: 233.33%;
+  /* 9:21 aspect ratio */ }
+
+.acu_frame > :first-child {
+  border: 0;
+  height: 100%;
+  /* left: 0; - turned this off 18/08 so smaller things can center*/
+  position: absolute;
+  top: 0;
+  max-width: 100% !important; }
+
+/*
+file name:      src/styles/banners.scss
+
+created:        20231026
+notes:          ACU Banners
+version:        1.0 creating a stylesheet for specific ACU thrive requested items | camilanovic
+                1.2 have changed to be available to the entire account | camilanovic
+*/
+.acu-banner-primary,
+.acu-banner-secondary,
+#course_home_content h2.ic-Action-header__Heading,
+#course_home_content h1.ic-Action-header__Heading {
+  padding: 1.5rem 1.5rem 1.75rem;
+  margin: .5rem 0 1.5rem;
+  position: relative;
+  overflow-x: clip; }
+  .acu-banner-primary h1,
+  .acu-banner-secondary h1,
+  #course_home_content h2.ic-Action-header__Heading h1,
+  #course_home_content h1.ic-Action-header__Heading h1 {
+    font-weight: 600;
+    font-size: 2.5rem; }
+  .acu-banner-primary:after,
+  .acu-banner-secondary:after,
+  #course_home_content h2.ic-Action-header__Heading:after,
+  #course_home_content h1.ic-Action-header__Heading:after {
+    content: '';
+    height: 1rem;
+    position: absolute;
+    width: 50%;
+    right: -10px;
+    bottom: -1rem;
+    display: inline-block;
+    transform: skew(45deg) skew(0deg) skew(0deg); }
+
+.acu-banner-primary,
+#course_home_content h2.ic-Action-header__Heading,
+#course_home_content h1.ic-Action-header__Heading {
+  background: #3c1054; }
+  .acu-banner-primary h1,
+  .acu-banner-primary h2,
+  .acu-banner-primary h3,
+  .acu-banner-primary p,
+  #course_home_content h2.ic-Action-header__Heading h1,
+  #course_home_content h2.ic-Action-header__Heading h2,
+  #course_home_content h2.ic-Action-header__Heading h3,
+  #course_home_content h2.ic-Action-header__Heading p,
+  #course_home_content h1.ic-Action-header__Heading h1,
+  #course_home_content h1.ic-Action-header__Heading h2,
+  #course_home_content h1.ic-Action-header__Heading h3,
+  #course_home_content h1.ic-Action-header__Heading p {
+    color: white; }
+  .acu-banner-primary:after,
+  #course_home_content h2.ic-Action-header__Heading:after,
+  #course_home_content h1.ic-Action-header__Heading:after {
+    background: #734a85; }
+
+.acu-banner-secondary {
+  background: #E8E3DB; }
+  .acu-banner-secondary:after {
+    background: #8c857b; }
+
+/* 
+file name:  src/styles/wells.scss
+
+created: 	250612
+notes: 		This stylesheet is for rules relating to wells (ie, <>)
+version: 	1.0 deployed in prod | thbui
+			
+*/
+/*
+
+	created:  	221001
+	notes:    	housing variables that will be reused across many stylesheets
+	version:  	1.0 init setup | s malcolm
+				1.1 adjustments for canvas core x | camilanovic
+				1.2 changes to default font | mahood
+*/
+/*
+$fonts: (
+	'body': $web-font,
+	'feature': $web-font,
+	'link': $web-font
+);*/
+.user_content .acu-disclaimer-well {
+  background: #eeeeee;
+  padding: 10px 20px;
+  border: none;
+  border-left: 20px solid #d00a00;
+  margin: 15px 0; }
+
+.user_content .acu-task-well,
+.user_content .acu-reminder-well {
+  min-height: 150px;
+  margin: 15px 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background: #eeeeee;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 10px 15px 30px 20px; }
+
+/*-----------------------
+Requested by LXD team to remove icons from all wells 2/6/2025
+
+//Set up a circular icon in the top-left area of the specified wells//
+.user_content .acu-task-well::before,
+.user_content .acu-reminder-well::before {
+  content: "";
+  position: absolute;
+  top: 35px;
+  left: 30px;
+  width: 80px;
+  height: 80px;
+  border-radius: 100%;
+  display: block;
+  background: white;
+  background-size: 80%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+//Assign the icon to the reading well//
+.user_content .acu-task-well::before,{
+  background-image: url("https://cei-dlc.acucontenthub.acu.edu.au/unitcontent/SharedAssets/Icons/icon-assess.svg");
+}
+
+//Assign the icon to the reminder well//
+.user_content .acu-reminder-well::before {
+  background-image: url("https://cei-dlc.acucontenthub.acu.edu.au/unitcontent/SharedAssets/Icons/icon-assess.svg");
+}
+--------------------------------  */
+.user_content .acu-task-well::after,
+.user_content .acu-reminder-well::after {
+  bottom: -3px;
+  content: "";
+  display: block;
+  left: 0px;
+  position: absolute;
+  z-index: 2;
+  height: 30px;
+  width: 100%;
+  clip-path: polygon(0px 0px, 200px 0px, 300px 27px, 100% 27px, 100% 30px, 0px 30px); }
+
+.user_content .acu-task-well::after {
+  background-color: #3C1053; }
+
+.user_content .acu-reminder-well::after {
+  background-color: #d00a00; }
+
+.user_content .acu-task-well > div::after,
+.user_content .acu-reminder-well > div::after {
+  clip-path: polygon(100% 0%, 100% 50%, 100px 50%, 0px 0%);
+  background: white;
+  position: absolute;
+  top: -1px;
+  right: -1px;
+  width: 250px;
+  height: 48px;
+  content: ""; }
+
+/* Requested by LXD team to keep list items to Canvas default 10/6/2025
+//Set the content area of list in wells//
+.user_content .acu-disclaimer-well ul li,
+.user_content .acu-task-well ul li,
+.user_content .acu-reminder-well ul li {
+  margin: 6px 20px 6px 20px;
+}*/
+.user_content .acu-disclaimer-well p,
+.user_content .acu-task-well p,
+.user_content .acu-reminder-well p {
+  margin: 5px 0px; }
+
+.user_content .acu-task-well h2 img,
+.user_content .acu-task-well h3 img,
+.user_content .acu-reminder-well h2 img,
+.user_content .acu-reminder-well h3 img {
+  display: none; }
+
+.user_content .acu-reminder-well h2,
+.user_content .acu-reminder-well h3,
+.user_content .acu-reminder-well h4 {
+  color: #d00a00; }
+
+.user_content .acu-disclaimer-well h2,
+.user_content .acu-disclaimer-well h3,
+.user_content .acu-disclaimer-well h4 {
+  color: #d00a00; }
+
+.user_content .acu-task-well h2,
+.user_content .acu-task-well h3,
+.user_content .acu-task-well h4 {
+  color: #3C1053; }
+
+@media screen and (max-width: 960px) {
+  .user_content .acu-task-well,
+  .user_content .acu-reminder-well {
+    padding: 10px 15px 30px 20px; }
+  /*------Remvoved the icons from the wells on smaller screens------
+  .user_content .acu-task-well::before,
+  .user_content .acu-reminder-well::before {
+    top: 30px;
+    left: 30px;
+    width: 60px;
+    height: 60px;
+  }
+    ----------------------------------------------------*/ }
+
+@media screen and (max-width: 768px) {
+  .user_content .acu-task-well,
+  .user_content .acu-reminder-well {
+    padding: 30px 20px 30px 30px; }
+  .user_content .acu-task-well::before,
+  .user_content .acu-reminder-well::before {
+    visibility: hidden; }
+  .user_content .acu-task-well::after,
+  .user_content .acu-reminder-well::after {
+    width: 100%;
+    clip-path: polygon(0px 0px, 15% 0px, 30% 25px, 50% 25px, 50% 30px, 0px 30px); }
+  .user_content .acu-task-well > div::after,
+  .user_content .acu-reminder-well > div::after {
+    clip-path: polygon(100% 0%, 100% 50%, 260px 50%, 210px 0%);
+    width: 100%; } }
+
+/* 
+file name:  src/styles/sourceCodeFormatter.scss
+
+created: 	250529
+notes: 		This useful for formatting source code in a consistent way across the site 
+            and allowing for copy to clipboard functionality
+version: 	1.0 deployed in prod | thbui
+			
+*/
+.acu_sourcecode {
+  border: 1px solid #bbb;
+  font: 16px / 19.2px Monaco, Menlo, Consolas, "Courier New", monospace !important;
+  margin: 10px auto 20px;
+  border-radius: 2px;
+  box-shadow: 2px 2px 1px #eeeeee; }
+
+.acu_sourcecode[data-show-border="false"] {
+  border: none;
+  margin: 5px;
+  box-shadow: 2px 2px 1px transparent; }
+
+.acu_sourcecode[data-show-lines="false"] {
+  background-image: none; }
+
+.acu_sourcecode[data-show-lines="false"] .hideLines {
+  display: none; }
+
+/** code in table styling*/
+.acu_sourcecode table td {
+  padding: 0 !important; }
+
+.acu_sourcecode table th,
+.acu_sourcecode table td {
+  background: transparent !important; }
+
+.acu_sourcecode table td.lineNumbers {
+  width: 40px;
+  text-align: right;
+  border-right: 2px solid #bbb; }
+
+.acu_sourcecode pre,
+.acu_sourcecode code {
+  border: none !important;
+  background-color: transparent !important;
+  margin: 0px !important;
+  padding: 0px !important;
+  font: 15px / 19.2px Monaco, Menlo, Consolas, "Courier New", monospace !important; }
+
+.acu_sourcecode pre {
+  padding: 7px 20px !important; }
+
+.acu_sourcecode[data-show-border="false"] pre {
+  padding: 7px 10px !important; }
+
+.acu_sourcecode table td.lineNumbers pre {
+  padding: 7px !important; }
+
+.acu_sourcecode pre > code span[style*="background-color"] {
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  padding: 0px 1px !important; }
+
+.acu_sourcecode .lang-header {
+  height: 38.4px;
+  width: 99%;
+  display: flex;
+  background-color: white;
+  border-bottom: 1px solid;
+  /* justify-content: flex-start; */
+  align-items: center;
+  justify-content: end;
+  padding-right: 1%;
+  /* font-size: 0.7em !important; */
+  font-weight: bold;
+  color: #7e7e7e;
+  font-family: sans-serif;
+  color: #000;
+  position: relative; }
+
+.acu_sourcecode .lang-text {
+  position: absolute;
+  left: 10px; }
+
+/*.acu_sourcecode .copy-button {
+    position: absolute;
+    right: 30px;
+}*/
+.acu_sourcecode .copy-button-msg {
+  padding-right: 10px;
+  font-size: 0.9em;
+  opacity: 0; }
+
+.acu_sourcecode .copy-button-msg.fade-out {
+  animation: fadeOutCopyMsg 2s; }
+
+@keyframes fadeOutCopyMsg {
+  0% {
+    opacity: 1; }
+  25% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+
+/* 
+file name:  src/styles/border-box.scss
+
+created: 	250627
+notes: 		This stylesheet is for rules relating to border-boxes (ie, <div class="border-box">)
+version: 	1.0 deployed in prod | thbui
+			
+*/
+/*
+
+	created:  	221001
+	notes:    	housing variables that will be reused across many stylesheets
+	version:  	1.0 init setup | s malcolm
+				1.1 adjustments for canvas core x | camilanovic
+				1.2 changes to default font | mahood
+*/
+/*
+$fonts: (
+	'body': $web-font,
+	'feature': $web-font,
+	'link': $web-font
+);*/
+.small-border-box {
+  background: #eeeeee;
+  padding: 2px 5px;
+  border-left: 5px solid #3C1053; }
+
+.user_content .small-border-box p,
+.user_content .medium-border-box p {
+  margin: 6px 0; }
+
+.medium-border-box {
+  padding: 5px 15px;
+  margin: 15px 0;
+  border-top: 4px solid #3C1053;
+  border-left: 4px solid #3C1053;
+  border-right: 4px solid #eeeeee;
+  border-bottom: 4px solid #eeeeee;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); }
+
+.large-border-box {
+  background: #eeeeee;
+  padding: 8px 15px;
+  margin: 15px 0; }
+
+.user_content .large-border-box h2 {
+  background-color: #3C1053;
+  color: #ffffff;
+  padding: 0px 5px 3px 5px; }
+
+/* Rquested by LXD team to reduce paddings from all border-boxes 2/6/2025
+.border-box h2, 
+.border-box h3,
+.border-box h4 {
+  margin-block-start: 12px;
+}
+*/
+/* 
+file name:  src/styles/blockquotes.scss
+
+created: 	250627
+notes: 		This stylesheet is for rules relating to border-boxes (ie, <div class="border-box">)
+version: 	1.0 deployed in prod | thbui
+			
+*/
+/* Blockquote style - pull quote large purple version */
+.user_content blockquote.acu-pull {
+  padding: 15px 0 0 0;
+  border: none;
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 70%; }
+
+.user_content blockquote.acu-pull * {
+  font-size: 20px;
+  text-align: left;
+  font-family: sans-serif; }
+
+.user_content blockquote.acu-pull::before {
+  content: "";
+  width: 30%;
+  height: 10px;
+  position: relative;
+  top: -14px;
+  left: 0;
+  background: #d00a00;
+  display: block; }
+
+.user_content blockquote.acu-pull::after {
+  content: "";
+  width: 30%;
+  height: 10px;
+  position: relative;
+  left: 0;
+  bottom: -14px;
+  background: #d00a00;
+  display: block;
+  margin-left: 70%; }
+
+.user_content blockquote.acu-pull small {
+  font-size: 12px;
+  padding: 20px 0; }
+
+/* Blockquote styles - grey/sand version - LXD requested to not use this blockquote style and keep for future if required */
+.user_content blockquote.acu {
+  padding: 15px 0 0 0;
+  border: none;
+  text-align: left;
+  font-weight: bold;
+  font-family: sans-serif;
+  color: #8c857b;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 70%; }
+
+.user_content blockquote.acu * {
+  font-size: 16px;
+  text-align: left;
+  font-weight: bold;
+  font-family: sans-serif;
+  color: #8c857b; }
+
+.user_content blockquote.acu::before {
+  content: "";
+  width: 30%;
+  height: 14px;
+  position: relative;
+  top: -14px;
+  left: 0;
+  background: #E8E3DB;
+  display: block; }
+
+.user_content blockquote.acu::after {
+  content: "";
+  width: 40%;
+  height: 34px;
+  position: relative;
+  left: 0;
+  bottom: -14px;
+  background: #E8E3DB;
+  display: block;
+  margin-left: 60%; }
+
+.user_content blockquote.acu small {
+  font-size: 12px;
+  padding: 10px 0;
+  display: block; }
+
+/* 
+file name:  src/styles/horizontal-rule.scss
+
+created: 	250630
+notes: 		This stylesheet is for rules relating to horizontal rules (ie, <hr>)
+version: 	1.0 deployed in prod | thbui
+			
+*/
+/*
+
+	created:  	221001
+	notes:    	housing variables that will be reused across many stylesheets
+	version:  	1.0 init setup | s malcolm
+				1.1 adjustments for canvas core x | camilanovic
+				1.2 changes to default font | mahood
+*/
+/*
+$fonts: (
+	'body': $web-font,
+	'feature': $web-font,
+	'link': $web-font
+);*/
+hr.purple-grey {
+  border-top: 4px solid #3C1053;
+  border-bottom: 4px solid #eeeeee; }
+
+hr.purple-red {
+  border-top: 4px solid #3C1053;
+  border-bottom: 4px solid #F2120C; }
+
+/*
+file name:  src/styles/designlibrary.scss
+
+created:  2026
+notes:    used to house the design library css, including in one file for easier asset management
+version:  0.1 first draft | camilanovic  
+      
+*/
+/*
+
+	created:  	221001
+	notes:    	housing variables that will be reused across many stylesheets
+	version:  	1.0 init setup | s malcolm
+				1.1 adjustments for canvas core x | camilanovic
+				1.2 changes to default font | mahood
+*/
+/*
+$fonts: (
+	'body': $web-font,
+	'feature': $web-font,
+	'link': $web-font
+);*/
+.acu-icon {
+  font-family: 'ACU-Icons';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1; }
+
+.acu_sourcecode pre {
+  margin: 0;
+  padding: 9px;
+  border: 1.25px solid #c7cdd1; }
+  .acu_sourcecode pre code {
+    background: transparent;
+    margin: 0;
+    padding: 0;
+    border: none; }
+
+table.acu-enhanced caption {
+  font-style: italic;
+  color: gray;
+  text-align: right;
+  padding: .5rem 0; }
+
+table.acu-enhanced.sand thead tr,
+table.acu-enhanced.sand thead tr th {
+  background-color: #E8E3DB !important;
+  color: #252320 !important; }
+
+table.acu-enhanced.sand tbody tr:nth-child(even) {
+  background-color: white !important; }
+
+table.acu-enhanced.blank thead th,
+table.acu-enhanced.blank thead tr,
+table.acu-enhanced.blank thead td,
+table.acu-enhanced.blank tbody th,
+table.acu-enhanced.blank tbody tr,
+table.acu-enhanced.blank tbody td {
+  background-color: transparent !important;
+  color: black !important; }
+
+table.acu-enhanced.border-black {
+  border: 2px solid black !important; }
+
+details.acu-enhanced.purple summary {
+  background: #3C1053;
+  color: white;
+  font-weight: bold; }
+
+details.acu-enhanced.border summary {
+  background: white;
+  border: 2px solid #3C1053;
+  color: #3C1053; }
+
+details.acu-enhanced.border div {
+  border: 2px solid #3C1053;
+  margin-top: -2px; }
+
+details.acu-enhanced.border:open summary {
+  background: #3C1053;
+  color: white;
+  font-weight: bold; }
+
+details.acu-enhanced.full-width {
+  width: 100%;
+  box-sizing: border-box; }
+  details.acu-enhanced.full-width details,
+  details.acu-enhanced.full-width summary {
+    width: 100%;
+    box-sizing: border-box; }
+
+div.acu-enhanced {
+  padding: 1rem;
+  margin: 1.5rem 0; }
+  div.acu-enhanced.purple {
+    background: #3C1053;
+    color: white; }
+    div.acu-enhanced.purple * {
+      color: white; }
+  div.acu-enhanced.purple-light {
+    background: #ddd4e1; }
+  div.acu-enhanced.sand {
+    background: #E8E3DB; }
+  div.acu-enhanced.border-light {
+    border: 1px solid #8C857B; }
+  div.acu-enhanced.border-medium {
+    border: 3px solid #8C857B; }
+  div.acu-enhanced.fit-content {
+    width: fit-content; }
+  div.acu-enhanced.header h2:first-child {
+    background: #3C1053;
+    color: white;
+    padding: .5rem;
+    margin: -1rem -1rem 1.5rem -1rem; }
+  div.acu-enhanced.two-column {
+    width: 50%;
+    padding: 0; }
+    div.acu-enhanced.two-column .column-left {
+      background: red; }
+    div.acu-enhanced.two-column .column-right {
+      background: green; }
+
+hr.acu-enhanced.purple {
+  border-color: #3C1053; }
+
+hr.acu-enhanced.red {
+  border-color: #F2120C; }
+
+hr.acu-enhanced.sand {
+  border-color: #E8E3DB; }
+
+hr.acu-enhanced.medium {
+  border-width: medium; }
+
+hr.acu-enhanced.thick {
+  border-width: thick; }
+
+hr.acu-enhanced.short {
+  width: 40%;
+  margin-left: auto;
+  margin-right: auto; }
+
+hr.acu-enhanced.spacer {
+  border: none;
+  margin: 2rem 0; }
+
+blockquote.acu-enhanced {
+  border-left: none;
+  text-align: center;
+  padding: 1rem 0;
+  margin: 1.5rem auto; }
+  blockquote.acu-enhanced * {
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: 1rem;
+    font-family: 'Georgia'; }
+  blockquote.acu-enhanced.purple:before, blockquote.acu-enhanced.purple:after {
+    background: #3C1053; }
+  blockquote.acu-enhanced.red:before, blockquote.acu-enhanced.red:after {
+    background: #F2120C; }
+  blockquote.acu-enhanced:before {
+    content: "";
+    height: 5px;
+    width: 40%;
+    float: left; }
+  blockquote.acu-enhanced:after {
+    content: "";
+    height: 5px;
+    width: 40%;
+    float: right; }
+
+div.acu-enhanced[class*="well"] {
+  background: #eeeeee;
+  position: relative;
+  overflow-x: clip;
+  padding: 2rem 2rem 3rem 2rem;
+  margin-bottom: 3rem; }
+  div.acu-enhanced[class*="well"]:before {
+    content: '';
+    height: 1rem;
+    position: absolute;
+    width: 10%;
+    right: -10px;
+    top: 0;
+    display: inline-block;
+    transform: skew(45deg) skew(0deg) skew(0deg);
+    background: white; }
+  div.acu-enhanced[class*="well"]:after {
+    content: '';
+    height: 1rem;
+    position: absolute;
+    width: 40%;
+    left: -10px;
+    bottom: 0rem;
+    display: inline-block;
+    transform: skew(45deg) skew(0deg) skew(0deg);
+    background: white; }
+  div.acu-enhanced[class*="well"][class*="-purple"] {
+    border-bottom: 2px solid #3C1053; }
+    div.acu-enhanced[class*="well"][class*="-purple"]:after {
+      background: #3C1053; }
+  div.acu-enhanced[class*="well"][class*="-red"] {
+    border-bottom: 2px solid #F2120C; }
+    div.acu-enhanced[class*="well"][class*="-red"]:after {
+      background: #F2120C; }
+
+div.acu-enhanced.columns-2,
+div.acu-enhanced.columns-3 {
+  display: flex;
+  gap: 1rem;
+  padding: 0; }
+  div.acu-enhanced.columns-2 .acu-column,
+  div.acu-enhanced.columns-3 .acu-column {
+    flex: 1 1 0;
+    min-width: 0; }
+  div.acu-enhanced.columns-2.background .acu-column,
+  div.acu-enhanced.columns-3.background .acu-column {
+    background: #eeeeee;
+    padding: .5rem 1rem; }
+  div.acu-enhanced.columns-2.border .acu-column,
+  div.acu-enhanced.columns-3.border .acu-column {
+    border: 1px solid #eeeeee;
+    padding: .5rem 1rem; }
+  @media (max-width: 600px) {
+    div.acu-enhanced.columns-2,
+    div.acu-enhanced.columns-3 {
+      flex-direction: column; } }

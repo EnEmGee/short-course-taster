@@ -1,0 +1,174 @@
+/*
+  canvas-shell.css
+  Recreates the parts of Canvas that the ACU theme files assume are present:
+  brand variables, the Lato font, base page layout, Canvas buttons and the
+  module Previous/Next footer. Load this LAST, after the ACU theme files.
+  Do not edit the ACU theme files themselves; put any overrides here.
+*/
+
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,400&display=swap");
+
+/* ---- Canvas brand variables (normally injected by Canvas) ---- */
+:root {
+  --ic-brand-font-color-dark: #2d3b45;
+  --ic-brand-font-color-dark-lightened-15: #4d5c66;
+  --ic-link-color: #3c1053;
+  --ic-brand-primary: #3c1053;
+  --ic-brand-button--primary-bgd: #3c1053;
+  --ic-brand-button--primary-bgd-darkened-15: #330e47;
+  --ic-brand-button--primary-text: #ffffff;
+  --ic-brand-button--secondary-bgd: #2d3b45;
+  --ic-brand-button--secondary-bgd-darkened-15: #26323b;
+  --ic-brand-button--secondary-text: #ffffff;
+}
+
+/* ---- Base page ---- */
+/* Note: no global box-sizing reset. Canvas leaves page content on the browser
+   default (content-box), and the theme's measurements (e.g. the side tabs on
+   activity boxes) depend on that. */
+
+html {
+  font-size: 16px;
+}
+
+body {
+  margin: 0;
+  background: #ffffff;
+  color: var(--ic-brand-font-color-dark);
+  font-family: "Lato Extended", "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+#content-wrapper {
+  width: 100%;
+}
+
+/* Canvas sizes #content as content-box: the theme's 1000px max-width
+   is the text area, with the 2.5rem padding added outside it */
+body #content {
+  box-sizing: content-box;
+}
+
+.user_content img {
+  max-width: 100%;
+  height: auto;
+}
+
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Page title: Canvas renders it light and large */
+.user_content > h1.page-title {
+  line-height: 1.2;
+}
+
+/* Canvas's built-in <pre> style (inherited from its Bootstrap base) */
+pre {
+  display: block;
+  margin: 0 0 10px;
+  padding: 9.5px;
+  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+  font-size: 13px;
+  line-height: 20px;
+  color: #2d3b45;
+  background-color: #f5f5f5;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  white-space: pre-wrap;
+  word-break: break-all;
+  word-wrap: break-word;
+}
+
+/* ---- Canvas button (used by the module footer) ---- */
+.Button {
+  display: inline-block;
+  position: relative;
+  padding: 8px 14px;
+  font-family: inherit;
+  font-size: 1rem;
+  line-height: 20px;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+.Button:focus-visible {
+  outline: 2px solid #3c1053;
+  outline-offset: 2px;
+}
+
+/* ---- Module Previous/Next footer ---- */
+.module-sequence-footer {
+  margin-top: 1.5rem;
+  padding: 0 0 24px;
+}
+
+/* Plain solid divider above the Previous/Next buttons.
+   Sits outside .user_content, so the theme's decorative hr styles don't apply;
+   this also cancels root.css's global hr margin. Spans the full footer width,
+   i.e. from the outer edge of Previous to the outer edge of Next. */
+.module-sequence-footer hr.module-sequence-rule {
+  width: 100%;
+  height: 0;
+  margin: 0 0 12px 0;
+  border: 0;
+  border-top: 1px solid #c7cdd1;
+}
+
+.module-sequence-footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.module-sequence-footer-button--next {
+  margin-left: auto;
+}
+
+#module_navigation_target a.Button,
+.module-sequence-footer-button--previous a,
+.module-sequence-footer-button--next a {
+  text-decoration: none;
+}
+
+/* Small arrow icons, standing in for Canvas's icon font */
+.module-sequence-footer .icon-mini-arrow-right,
+.module-sequence-footer .icon-mini-arrow-left {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+  vertical-align: middle;
+  position: relative;
+  top: -1px;
+}
+
+.module-sequence-footer .icon-mini-arrow-right {
+  border-left: 5px solid currentColor;
+  margin-left: 6px;
+}
+
+.module-sequence-footer .icon-mini-arrow-left {
+  border-right: 5px solid currentColor;
+  margin-right: 6px;
+}
+
+/* Screen-reader-only text */
+.screenreader-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  border: 0;
+}
